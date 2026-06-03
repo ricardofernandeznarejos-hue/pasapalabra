@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pasapalabra EXO</title>
+
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="juego.js" defer></script>
+</head>
+<body>
+<header class="header">
+  <img src="img/EXO_logo.png" class="logo">
+  <span class="appTitle">Pasapalabra</span>
+</header>
+
+<div class="wrap">
+
+  <!-- Panel izquierdo (rosco y stats) -->
+  <aside class="panel">
+    <div id="rosco"></div>
+
+    <div class="stats">
+      <div class="tag">Aciertos <span id="ok" class="v">0</span></div>
+      <div class="tag">Fallos <span id="ko" class="v">0</span></div>
+      <div class="tag">Tiempo <span id="time" class="v">600</span></div>
+    </div>
+
+    <div class="row">
+      <button id="btnStart">Comenzar</button>
+      <button id="btnPause" class="secondary">Pausar</button>
+      <button id="btnReset" class="warn">Reiniciar</button>
+    </div>
+  </aside>
+
+  <!-- Panel derecho -->
+  <main class="panel">
+    <div class="q" id="pregunta">Pulsa “Comenzar” para iniciar.</div>
+
+    <div class="controls">
+      <input id="respuesta" type="text" placeholder="Tu respuesta..." autocomplete="off"/>
+      <button id="btnResponder">Responder</button>
+      <button id="btnPasapalabra" class="secondary">Pasapalabra</button>
+    </div>
+
+    <div id="end" class="end">
+      <div id="scoreText" class="score"></div>
+    </div>
+
+    <hr>
+
+    <div id="floatingScore" class="floatingScore"></div>
+
+<div class="scoreBox">
+  <span class="label">PUNTUACIÓN</span>
+  <span id="scoreNow" class="value">0</span>
+</div>
+
+
+  <hr>
+
+    <div class="panel rank">
+      <h3>🏆 Top 10</h3>
+      <table id="tablaRanking">
+        <thead>
+          <tr>
+            <th>Jugador</th>
+            <th>Puntos</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+       <hr>
+    </div>
+
+  </main>
+</div>
+
+</body>
+</html>
